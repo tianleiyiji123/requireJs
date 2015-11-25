@@ -1,0 +1,23 @@
+{
+  "name": "requirejs",
+  "version": "1.0.0",
+  "description": "requiretest",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start":"http-server -a 0.0.0.0 -p 9000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/tianleiyiji123/requireJs.git"
+  },
+  "keywords": [
+    "require"
+  ],
+  "author": "Lwang",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.6.5",
+    "http-server": "^0.8.5"
+  }
+}

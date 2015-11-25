@@ -1,0 +1,19 @@
+<div>
+    1111111111111
+</div>
+<input ng-model="query">
+<div id="jqTest" ng-click="colChange()">
+    <ul ng-repeat="subList in list | filter:query">
+        <li>
+            {{subList.num}}
+        <p>{{subList.name}}</p>
+        </li>
+
+    </ul>
+</div>
+<style>
+    .colorChange{
+        color:red;
+        font-size: 30px;
+    }
+</style>

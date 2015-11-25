@@ -1,0 +1,41 @@
+{
+  "name": "bower",
+  "version": "0.0.0",
+  "authors": [
+    "Lwang"
+  ],
+  "description": "bower",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "keywords": [
+    "bower"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.19",
+    "zepto": "~1.1.6",
+    "r.js": "~2.1.19",
+    "swiper": "~3.1.0",
+    "lazyload": "~3.2.1",
+    "jquery": "~2.1.4",
+    "angular": "1.4.x",
+    "angular-mocks": "1.4.x",
+    "angular-route": "1.4.x",
+    "requirejs-domready": "latest",
+    "angular-touch": "~1.4.4",
+    "angular-cookies": "~1.4.5",
+    "iscroll":"5"
+  }
+}
