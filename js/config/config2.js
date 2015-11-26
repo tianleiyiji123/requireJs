@@ -8,6 +8,14 @@ require.config({
         "angular": "lib/angular",
         "angular-route": "lib/angular-route",
         "swiper": "lib/swiper",
-        "zepto": "lib/zepto"
+        "zepto": "lib/zepto",
+        "handle":"lib/handlebars"
+    },
+    "shim":{
+        "lib/handlebars":{
+            deps:["jquery"],
+            exports:"Handlebars"
+        }
+
     }
 });

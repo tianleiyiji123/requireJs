@@ -4,14 +4,26 @@
 
 define(["angular"],function(angular){
     var html1 = angular.module("html1",["ngRoute"]);
-        html1.controller("html1Ctrl",html1Ctrl);
-    function html1Ctrl(name,age){
-        console.log(112);
-        this.a = name;
+        html1.controller("html1Ctrl",["$scope",function($scope){
+            //console.log(112);
+            //this.a = name;
+            //this.age = age;
+            //this.say = function(){
+            //    alert(this.a+"=="+this.age);
+            //}
+
+
+
+
+        }]);
+
+    function People(name,age){
+        this.name = name;
         this.age = age;
         this.say = function(){
-            alert(this.a+"=="+this.age);
+            alert(this.name +"=="+ this.age);
         }
     }
-    return html1Ctrl;
+
+    return People;
 });

@@ -5,7 +5,7 @@
 define(["angular", "./html1Ctrl"], function (angular, html1Ctrl) {
     var html2 = angular.module("html2", ["ngRoute"]);
     html2.controller("html2Ctrl", ["$scope", function ($scope) {
-        angular.element("#jqTest").find("li").eq(2).addClass("colorChange");
+        //angular.element("#jqTest").find("li").eq(2).addClass("colorChange");
 
         $scope.list = [{
             name: "wanglei",
@@ -32,8 +32,8 @@ define(["angular", "./html1Ctrl"], function (angular, html1Ctrl) {
         //x("wanglei",28).say();
         //console.log(html1Ctrl("wanglei",29));
 
-        var x = function(){};
-        html1Ctrl.apply(x,["wanglei",19]);
-        console.dir(x);
+        //var x = function(){};
+        //html1Ctrl.apply(x,["wanglei",19]);
+        //console.dir(x);
     }]);
 });

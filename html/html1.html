@@ -6,12 +6,144 @@
 </head>
 <body>
 111111111111111
+
+<div id="attrTest">
+    <ul>
+        <li data="1">1</li>
+        <li data="2">2</li>
+        <li data="3">3</li>
+        <li data="4">4</li>
+        <li data="5">5</li>
+        <li data="6">6</li>
+    </ul>
+</div>
+
+<div id="handleTest">
+    <ul>
+        <li>
+            <p>姓名</p>
+
+            <p>年龄</p>
+
+            <p>性别</p>
+        </li>
+    </ul>
+</div>
 </body>
 <script src="../js/require.js"></script>
 <script src="../js/config/config2.js"></script>
 <script>
-    require(["jquery"],function($){
+    require(["jquery"], function ($) {
+//        alert($("#attrTest ul").find("li[data='5']").index());
+//        $(document).click(function () {
+//            $("#attrTest").animate({
+//                        "opacity": "toggle"
+//                    },
+//                    {
+//                        easing: "linear",
+//                        duration: 2000,
+//                        complete: function () {
+//                        }
+//                    })
+//        })
 
+
+
+
+    });
+</script>
+<script id="list-template" type="text/x-handlebars-template">
+
+    {{#each people}}
+        {{#if name}}
+            {{#compare age 20}}
+    <li>
+        <p>{{name}}</p>
+
+        <p>{{age}}</p>
+
+        <p>{{sex}}</p>
+        {{#with favorite}}
+            {{#each this}}
+                <p>{{this}}</p>
+            {{/each}}
+        {{/with}}
+    </li>
+    {{else}}
+
+    {{/compare}}
+        {{/if}}
+    {{/each}}
+</script>
+<script>
+    require(["lib/handlebars"], function (handle) {
+
+//        var data = {
+//            "people": [
+//                {
+//                    "name": "王雷",
+//                    "age": 25,
+//                    "sex": "男"
+//                }, {
+//                    "name": "倪小伟",
+//                    "age": 25,
+//                    "sex": "男"
+//                }, {
+//                    "name": "王雷",
+//                    "age": 25,
+//                    "sex": "男"
+//                }, {
+//                    "name": "王雷",
+//                    "age": 25,
+//                    "sex": "男"
+//                }, {
+//                    "name": "王雷",
+//                    "age": 25,
+//                    "sex": "男"
+//                }, {
+//                    "name": "王雷",
+//                    "age": 25,
+//                    "sex": "男"
+//                }, {
+//                    "name": "王雷",
+//                    "age": 25,
+//                    "sex": "男"
+//                }
+//            ]
+//        };
+
+        var data ="";
+        $.ajax({
+            "url":"../data/data.json",
+            "dataType":"json",
+            "xhrFields":{
+                "withCredentials":true
+            },
+            "success":function(res){
+                console.log(res);
+                data = res;
+                var template = Handlebars.compile($("#list-template").html());
+
+                Handlebars.registerHelper("compare",function(v1,v2,options){
+                        if(v1>v2){
+                            return options.fn(this);
+                        }else{
+                            return options.inverse(this);
+                        }
+                });
+
+                $("#handleTest ul").html("").html(template(data));
+            }
+
+        });
+
+
+
+        $(function(){
+            $("#handleTest ul li").click(function(){
+                alert($(this).index());
+            });
+        });
     });
 </script>
 </html>
