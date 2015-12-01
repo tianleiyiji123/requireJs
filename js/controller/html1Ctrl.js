@@ -12,7 +12,7 @@ define(["angular"],function(angular){
             //    alert(this.a+"=="+this.age);
             //}
 
-
+            $scope.ngModule = "宋仁伟";
 
 
         }]);

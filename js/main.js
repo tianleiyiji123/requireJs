@@ -1,11 +1,12 @@
 /**
  * Created by Lwang on 2015/11/23.
  */
-require(["angular", "./lib/angular-route","config/route_config", "jquery", "./controller/html1Ctrl", "./controller/html2Ctrl"],
+require(["angular", "./lib/angular-route","config/route_config", "jquery", "./controller/html1Ctrl", "./controller/html2Ctrl","./directive/directive"],
     function (angular,angularRoute,routeConf,$) {
-    var app = angular.module("app", ["ngRoute","html1","html2"]);
+    var app = angular.module("app", ["ngRoute","html1","html2","directiveModule"]);
         app.run(["$rootScope",function($rootScope){
             //alert($rootScope);
+            $rootScope.name = "wanglei";
         }]);
         app.config(["$routeProvider","$locationProvider","$httpProvider",function($routeProvider,$locationProvider,$httpProvider){
             $routeProvider.when("/html1", {

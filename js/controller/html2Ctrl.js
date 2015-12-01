@@ -25,6 +25,9 @@ define(["angular", "./html1Ctrl"], function (angular, html1Ctrl) {
             "grade": "一年级",
             "class": "21班"
         };
+
+        $scope.ngModule = "王雷";
+
         //alert(typeof html1Ctrl);
         //var x = new html1Ctrl();
         //console.dir(x);
