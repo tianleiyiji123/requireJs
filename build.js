@@ -8,7 +8,7 @@
     "dir":"build-script",
     "fileExclusionRegExp":/^(r|build)\.js$|js1|js2|config2.js|ngSingle/,
     "optimizeCss":"standard",
-    "removeCombined":true,
+    "removeCombined":false,
     "paths": {
         "jquery": "lib/jquery",
         "angular": "lib/angular",

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/lib/jquery.js"></script>
+</head>
+<body>
+     <file-upload>
+         <file-module>
+             <file-in>
+
+             </file-in>
+         </file-module>
+     </file-upload>
+
+     <file-upload>
+         <file-module>
+             <file-in>
+
+             </file-in>
+         </file-module>
+     </file-upload>
+
+     <file-upload>
+         <file-module>
+             <file-in>
+
+             </file-in>
+         </file-module>
+     </file-upload>
+
+     <file-upload>
+         <file-module>
+             <file-in>
+
+             </file-in>
+         </file-module>
+     </file-upload>
+</body>
+<script src="js/lib/angular.js"></script>
+<script>
+    var app = angular.module("app",[]);
+    app.directive("fileUpload",function(){
+        return{
+            "restrict":"EACM",
+            "transclude":true,
+            "replace":true,
+            "template":'<div class="contain" ng-transclude></div>'
+        }
+    });
+    app.directive("fileModule",function(){
+        return{
+            "restrict":"EACM",
+            "transclude":true,
+            "replace":true,
+            "template":'<div class="contain" ng-transclude></div>'
+        }
+    });
+    app.directive("fileIn",function(){
+        return{
+            "restrict":"EACM",
+            "transclude":true,
+            "replace":true,
+            "template":'<div class="contain" ng-click="goClick(this)">' +
+            '<div ng-show="goShow" ng-init="goShow = true">第一个</div>' +
+            '<div ng-show="!goShow">第二个</div>' +
+            '</div>',
+            "controller":["$scope",function($scope){
+//                    $scope.goClick = function(data){
+//                        $scope.goShow = !$scope.goShow;
+//                    }
+            }],
+            "link":function(scope,ele,attr){
+                        scope.goClick = function(data){
+                        scope.goShow = !scope.goShow;
+                    }
+            }
+        }
+    });
+
+</script>
+
+</html>

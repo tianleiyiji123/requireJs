@@ -12,15 +12,6 @@ define(["angular"],function(angular){
             //    alert(this.a+"=="+this.age);
             //}
 
-            $scope.customerName = "普通angular测试!";
-            $scope.credit = "8000";
-            $scope.save = function(tips){
-                alert(tips);
-            };
-            //$scope.toClick = function(data){
-            //    console.log(data);
-            //
-            //}
 
 
 

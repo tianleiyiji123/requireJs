@@ -1,0 +1,105 @@
+body,div,p,a,li,ul,ol {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    background: none;
+
+}
+
+#header {
+    position: relative;
+    width: 640px;
+    height: 85px;
+    background: url("./images/title_2.png") no-repeat;
+    display: block;
+}
+
+#header .header_2 {
+    display: block;
+    position: absolute;
+    /*left: 183px;*/
+    left: 50%;
+    margin-left: -136px;
+    top: 30px;
+    width: 273px;
+    height: 40px;
+    background: url("./images/title_1.png") no-repeat;
+}
+
+.contain {
+    padding-top: 0px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 640px;
+    height: 1195px;
+    background: url("./images/bg.png") no-repeat;
+}
+
+.contain .contain_header1 {
+    position: absolute;
+    top: 20px;
+    left: 180px;
+    display: block;
+    width: 276px;
+    height: 40px;
+    background: url("./images/yubu.png") no-repeat;
+
+}
+
+.contain .contain_header2 {
+    position: absolute;
+    top: 92px;
+    left: 100px;
+    display: block;
+    width: 434px;
+    height: 164px;
+    background: url("./images/uberdaini.png") no-repeat;
+
+}
+
+
+.contain a {
+    position: absolute;
+    top: 290px;
+    left: 230px;
+    display: block;
+    width: 171px;
+    height: 44px;
+    cursor: pointer;
+}
+
+.contain .contain_bg2{
+    position: absolute;
+    top: 367px;
+    left: 18px;
+    display: block;
+    width: 570px;
+    height: 570px;
+    background: url("./images/bg2.png") right center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.footer{
+    position: relative;
+    left: 40px;
+    top:980px;
+    display: block;
+    width: 570px;
+    height: 85px;
+    background: url("./images/bottom.png") no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
