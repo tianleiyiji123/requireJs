@@ -1,51 +1,43 @@
-/**
- * Created by Lwang on 2015/11/27.
- */
+<!DOCTYPE html >
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body >
 
-define(["angular"], function (angular) {
-    var directiveModule = angular.module("directiveModule", []);
-    directiveModule.directive("helloTest", ["$rootScope", function ($rootScope) {
-        return {
-            "restrict": "EACM",
-            //require: '^html1Ctrl',
-            "scope": {
-                ngModule: '@ngModule'
-            },
-            "template": '<div ng-show="color" ng-click="_change()" ng-init="color = true">{{ngModule}}</div>',
-            "replace": true,
-            "link": function (scope, ele, attr) {
-                //alert($rootScope.name);
-                scope.ngModule = "王雷";
-                scope._change = function () {
-                    scope.color = false;
-                }
-            }
-        }
-    }]);
-
-    directiveModule.directive("myDir", function () {
+<my-dir your-name="customerName"
+        my-amount="credit"
+        my-save="save('[来自dir的弹窗]')"
+        >
+    <my-dir-in></my-dir-in>
+    <!--<my-dir-in title="这是inside2"></my-dir-in>-->
+    <!--<my-dir-in title="这是inside3"></my-dir-in>-->
+    <!--<my-dir-in title="这是inside4"></my-dir-in>-->
+</my-dir>
+</body>
+<script src="js/lib/angular.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var app = angular.module("app",[]);
+    app.directive("myDir", function () {
         return {
             restrict: "ECAM",
             scope: {
                 myName: "=yourName",   // name 值传递 （字符串，单向绑定）
                 myAmount: "=", // amount 引用传递（双向绑定）
-                mySave: "&noSave"    // 保存操作
+                mySave: "&"    // 保存操作
             },
             template: "<div>" +
-            "  {{myName}}: <input ng-model='myName'/>" +
+            "  {{myName}}: <input ng-model='myAmount'/>" +
             "  <button  ng-click='mySave()'>保存</button>" +
-            "<div ng-transclude></div>" +
             "</div>",
             replace: true,
-            transclude: true,
+            transclude: false,
             controller:["$scope",function($scope){
-                //$scope.mySave = function(){
-                //    alert(1213);
-                //}
-                //$scope.myName = "shabi";
+//                $scope.customerName = "nihao";
             }],
             link: function (scope, element, attrs) {
-                scope.myName = "shabi";
+                scope.myName = "haha";
                 //console.log("initial value for name:" + scope.name);
                 //console.log("initial value for amount:" + scope.amount);
 
@@ -64,19 +56,24 @@ define(["angular"], function (angular) {
         }
 
     });
-    directiveModule.directive("myDirIn", function () {
+//    app.controller("testCtrl",["$scope",function($scope){
+//        $scope.customerName = "tahao";
+//        $scope.customerName = "ad";
+//    }]);
+
+    app.directive("myDirIn", function () {
         return {
             "restrict": "ECAM",
-            "transclude": true,
+            "transclude": false,
             "scope": {
-                title: "@qqq",
-                subtit:"@ppp",
-                toClick:"&noClick"
+                t: "@t"
             },
             "replace": true,
-            "template": "<div ng-click='toClick(this)' >{{title}}<span ng-show = 'goHide' ng-init='goHide = true'>{{subtit}}</span></div>",
+            "template": "<div ng-repeat='t1 in sss' ><span ng-click='toClick(t1.title)'>aaa</span></div>",
             "controller": ["$scope", function ($scope) {
-
+                $scope.toClick = function(data){
+                    alert(data);
+                };
                 $scope.sss = [{
                     title: "第一个",
                     age: 10
@@ -98,17 +95,10 @@ define(["angular"], function (angular) {
             "controllerAs":"html1Ctrl",
 
             link: function (scope, ele, attrs) {
-                scope.toClick = function(data){
-                    console.log(data);
-                    console.log(data.goHide = false);
 
-                };
             }
 
         }
     })
-
-
-});
-
-
+</script>
+</html>

@@ -3,13 +3,33 @@
 </div>
 
 <div>
-    <div>{{ngModule}}</div>
-    <hello-test hello-test="">
-    </hello-test>
+    <!--<div>{{ngModule}}</div>-->
+    <!--<hello-test hello-test="">-->
+    <!--</hello-test>-->
 
-    <hello-test>
-    </hello-test>
+    <!--<hello-test>-->
+    <!--</hello-test>-->
 
-    <hello-test>
-    </hello-test>
+    <!--<hello-test>-->
+    <!--</hello-test>-->
+
 </div>
+
+
+<h3>angular普通</h3>
+{{customerName}}:<input ng-model="credit" type="text">
+<button ng-click="save('[来自普通控制器]')">保存</button>
+
+<my-dir your-name = "customerName"
+        my-amount="credit"
+        no-save="save('[来自dir的弹窗]')"
+        >
+    <my-dir-in qqq="第一个" ppp="11" no-click="save('[来自dir的弹窗]')"></my-dir-in>
+    <my-dir-in qqq="第二个" ppp="12" no-click="save('[来自dir的弹窗]')"></my-dir-in>
+    <my-dir-in qqq="第三个" ppp="13" no-click="save('[来自dir的弹窗]')"></my-dir-in>
+    <my-dir-in qqq="第四个" ppp="14" no-click="save('[来自dir的弹窗]')"></my-dir-in>
+    <!--<my-dir-in title="这是inside2"></my-dir-in>-->
+    <!--<my-dir-in title="这是inside3"></my-dir-in>-->
+    <!--<my-dir-in title="这是inside4"></my-dir-in>-->
+</my-dir>
+

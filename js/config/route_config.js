@@ -6,10 +6,17 @@ define([],function(){
         $routeProvider.when("/html1", {
             templateUrl: "/views/html1.html",
             controller: "html1Ctrl"
-        }).when("/html2", {
+        })
+            .when("/html2", {
             templateUrl: "/views/html2.html",
             controller: "html2Ctrl"
-        }).otherwise({
+        })
+            .when("/html3",{
+                templateUrl:"/views/html3.html",
+                controller:"html3Ctrl"
+            })
+
+            .otherwise({
             redirectTo: "/html1"
         });
 
